@@ -24,6 +24,8 @@
         </activity>
 
         <service android:name=".ui.util.ForegroundService" />
+        <service android:name=".ui.util.BindService" />
+
     </application>
 
 </manifest>

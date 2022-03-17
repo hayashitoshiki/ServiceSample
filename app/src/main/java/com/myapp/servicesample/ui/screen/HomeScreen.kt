@@ -10,12 +10,20 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.navigation.NavHostController
+import com.myapp.servicesample.ui.Screens
 import com.myapp.servicesample.ui.util.ForegroundService
 
+/**
+ * 普通のService発火サンプル
+ *
+ * @param navController
+ */
 @Composable
-fun HomeScreen() {
+fun HomeScreen(navController: NavHostController) {
     val context = LocalContext.current
 
+    // レイアウト
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -28,6 +36,9 @@ fun HomeScreen() {
             }
         ) {
             Text(text = "start Foreground Service")
+        }
+        Button(onClick = { navController.navigate(Screens.Bind.route) }) {
+            Text(text = "bind Service Screen")
         }
     }
 }

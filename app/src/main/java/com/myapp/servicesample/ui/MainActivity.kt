@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import com.myapp.servicesample.ui.screen.HomeScreen
+import androidx.navigation.compose.rememberNavController
 import com.myapp.servicesample.ui.theme.ServiceSampleTheme
 
 class MainActivity : ComponentActivity() {
@@ -14,7 +14,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             ServiceSampleTheme {
                 Surface(color = MaterialTheme.colors.background) {
-                    HomeScreen()
+                    val navController = rememberNavController()
+                    AppNavHost(navController)
                 }
             }
         }
